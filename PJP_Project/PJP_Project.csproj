@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\net5.0\PJP_Project_exprBaseListener.cs" />
+    <Compile Include="obj\Debug\net5.0\PJP_Project_exprBaseVisitor.cs" />
+    <Compile Include="obj\Debug\net5.0\PJP_Project_exprLexer.cs" />
+    <Compile Include="obj\Debug\net5.0\PJP_Project_exprListener.cs" />
+    <Compile Include="obj\Debug\net5.0\PJP_Project_exprParser.cs" />
+    <Compile Include="obj\Debug\net5.0\PJP_Project_exprVisitor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net5.0\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\net5.0\PJP_Project_expr.tokens" />
+    <None Include="obj\Debug\net5.0\PJP_Project_exprLexer.tokens" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4" Version="4.6.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
+  </ItemGroup>
+
+</Project>
