@@ -25,7 +25,7 @@ namespace PJP_Project
             if (parser.NumberOfSyntaxErrors == 0)
             {
                 Console.WriteLine(tree.ToStringTree(parser));
-                ParseTreeWalker walker = new ParseTreeWalker();
+
 
             }
             else
