@@ -21,18 +21,20 @@ namespace PJP_Project
 
             parser.AddErrorListener(new VerboseListener());
             IParseTree tree = parser.program();
-
             if (parser.NumberOfSyntaxErrors == 0)
             {
                 Console.WriteLine(tree.ToStringTree(parser));
-
-
             }
             else
             {
                 Console.WriteLine("Syntax error found");
             }
-
+            VisitorTypeChecking visitorTypeChecking = new VisitorTypeChecking();
+            String type = visitorTypeChecking.Visit(tree);
+            foreach (var error in visitorTypeChecking.Errors)
+            {
+                Console.Write(error);
+            }
 
         }
     }

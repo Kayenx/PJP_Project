@@ -67,7 +67,7 @@ IF : 'if' ;
 ELSE : 'else' ;
 WHILE : 'while' ;
 
-VARIABLE :  [a-zA-Z] ([a-zA-Z0-9]*)? ;
+
 
 //Literals
 FLOAT : [0-9]+'.'[0-9]+ ;
@@ -80,6 +80,7 @@ fragment EscapeSequence
     | '\\' ([0-3]? [0-7])? [0-7]
     ;
 
+VARIABLE :  [a-zA-Z] ([a-zA-Z0-9]*)? ;
 // SKIP
 
 WS : [ \t\r\n]+ -> skip ;
