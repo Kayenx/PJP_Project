@@ -28,12 +28,30 @@ namespace PJP_Project
             else
             {
                 Console.WriteLine("Syntax error found");
+                return;
             }
             VisitorTypeChecking visitorTypeChecking = new VisitorTypeChecking();
             String type = visitorTypeChecking.Visit(tree);
-            foreach (var error in visitorTypeChecking.Errors)
+            if (visitorTypeChecking.Errors.Count > 0)
             {
-                Console.Write(error);
+                foreach (var error in visitorTypeChecking.Errors)
+                {
+                    Console.Write(error);
+                }
+                return;
+            }
+            VisitorTarget visitorTarget = new VisitorTarget();
+            String target_code = visitorTarget.Visit(tree);
+            try
+            {
+                using(StreamWriter sw = new StreamWriter("output.txt"))
+                {
+                    sw.Write(target_code);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
             }
 
         }
