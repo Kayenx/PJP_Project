@@ -53,7 +53,9 @@ namespace PJP_Project
             {
                 Console.WriteLine(e);
             }
-
+            var target_input = File.ReadAllText("output.txt");
+            VirtualMachine vm = new VirtualMachine(target_input);
+            vm.Run();
         }
     }
 }
